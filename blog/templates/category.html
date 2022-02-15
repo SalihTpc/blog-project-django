@@ -1,10 +1,11 @@
 {% extends "base.html" %} {% block content %} 
 {% if category_posts %}
+
 <section class="bg-light pb-5 shadow-sm">
   <div class="container mt-5">
     <div class="row">
       <div class="col-12">
-        <h3 class="text-uppercase text-center border-bottom mb-4">{{teams}}</h3>
+        <h3 class="text-uppercase text-center border-bottom mb-4">{{teams.category.id}}</h3>
       </div>
     </div>
   </div>
@@ -13,7 +14,7 @@
     <div class="col-lg-4 mb-3 d-flex align-items-stretch">
       <div class="card">
         <img
-          src="{{post.pics}}"
+          src="{{post.image}}"
           class="card-img-top"
           alt="{{post.title}}"
           height="286px"
@@ -21,7 +22,7 @@
         <div class="card-body d-flex flex-column">
           <h4 class="card-title">{{post.title}}</h4>
           <h6 class="card-subtitle mb-2 text-muted">
-            By: {{ post.author }} - {{post.category}}
+            By: {{ post.author }} - {{post.category.name}}
           </h6>
           <p class="card-text mb-4">{{post.body|slice:":100"|safe}}</p>
           <a

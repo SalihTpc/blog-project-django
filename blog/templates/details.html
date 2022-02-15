@@ -13,14 +13,13 @@
   <p class="lead">
     <a
       class="btn btn-secondary btn-lg"
-      href="{% url 'category' post.category %}"
+      href="{% url 'category' post.category.id %}"
       role="button"
       >{{ post.category }}</a
     >
   </p>
   <p class="lead">
-    By: {{ post.author }} - Time: {{ post.post_date }} - Since post: {{
-    post.post_date|timesince }} ego
+    By: {{ post.author }} - Time: {{ post.post_date }} - Since post: {{ post.post_date|timesince }} ego
   </p>
   <hr class="my-4" />
   <p>{{post.body|safe}}</p>
