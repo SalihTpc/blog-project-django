@@ -19,7 +19,7 @@ class Post(models.Model):
     post_date = models.DateTimeField(auto_now_add=True)
     # image = models.ImageField(upload_to="")
     image = models.CharField(max_length=255)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="Category")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, related_name="posts", blank=True)
     # slug = models.SlugField(blank=True, unique=True)
     
